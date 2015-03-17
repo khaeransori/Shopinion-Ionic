@@ -1,0 +1,63 @@
+<ion-view view-title="Products">
+  <ion-content>
+    <div class="row" data-ng-repeat="product in vm.products" data-ng-if="$index % 2 === 0">
+    	<div class="col col-50" data-ng-if="$index < vm.products.length">
+    		<a ui-sref="app.products.detail({id: vm.products[$index].id})" class="link-plain">
+    			<div class="item item-image">
+    				<img data-ng-src="{{vm.products[$index].images[0].medium_source}}" data-ng-if="vm.products[$index].images.length > 0">
+    				<img src="http://placehold.it/300x400" data-ng-if="vm.products[$index].images.length === 0">
+    			</div>
+
+    			<div class="subdued">
+    				<!-- manufacturer -->
+    			</div>
+    			<div class="subdued">
+    				{{vm.products[$index].name}}
+    			</div>
+
+    			<div class="subdued" data-ng-if="vm.products[$index].sale_price !== '0.000000'">
+    				<span class="assertive bold">
+    					{{vm.products[$index].sale_price | currency: "Rp. "}}
+    				</span>
+    			</div>
+
+    			<div class="subdued">
+    				<span data-ng-class="{'bold': vm.products[$index].sale_price === '0.000000', 'text-strike': vm.products[$index].sale_price !== '0.000000'}">
+    					{{vm.products[$index].price | currency: "Rp."}}
+    				</span>
+    			</div>
+    		</a>
+    	</div>
+
+    	<div class="col col-50" data-ng-if="$index + 1 < vm.products.length">
+    		<a ui-sref="app.products.detail({id: vm.products[$index + 1].id})" class="link-plain">
+    			<div class="item item-image">
+    				<img data-ng-src="{{vm.products[$index + 1].images[0].medium_source}}" data-ng-if="vm.products[$index + 1].images.length > 0">
+                    <img src="http://placehold.it/300x400" data-ng-if="vm.products[$index + 1].images.length === 0">
+    			</div>
+
+    			<div class="subdued">
+    				<!-- manufacturer -->
+    			</div>
+    			<div class="subdued">
+    				{{vm.products[$index + 1].name}}
+    			</div>
+
+    			<div class="subdued" data-ng-if="vm.products[$index + 1].sale_price !== '0.000000'">
+    				<span class="assertive bold">
+    					{{vm.products[$index + 1].sale_price | currency: "Rp. "}}
+    				</span>
+    			</div>
+
+    			<div class="subdued">
+    				<span data-ng-class="{'bold': vm.products[$index + 1].sale_price === '0.000000', 'text-strike': vm.products[$index + 1].sale_price !== '0.000000'}">
+    					{{vm.products[$index + 1].price | currency: "Rp."}}
+    				</span>
+    			</div>
+    		</a>
+    	</div>
+    </div>
+
+    <ion-infinite-scroll ng-if="!vm.noMoreItemsAvailable" on-infinite="vm.loadMoreProducts()"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

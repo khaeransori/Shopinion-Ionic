@@ -1,0 +1,34 @@
+{
+  "name": "Shopinion",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.0"
+  },
+  "dependencies": {
+    "moment": "~2.8.3",
+    "angular-moment": "~0.8.2",
+    "ngCordova": "~0.1.4-alpha",
+    "angular-resource": "~1.3.13",
+    "angular-animate": "~1.3.13",
+    "angular-sanitize": "~1.3.13",
+    "angular-ui-router": "0.2.13",
+    "ionic-ion-auto-list-divider": "1.0.0",
+    "lodash": "~2.4.1",
+    "ngstorage": "~0.3.0",
+    "fontawesome": "~4.2.0"
+  },
+  "resolutions": {
+    "angular": "~1.3.13"
+  },
+  "overrides": {
+    "ionic": {
+      "main": [
+        "js/ionic.min.js",
+        "js/ionic-angular.min.js"
+      ]
+    },
+    "fontawesome": {
+        "main": []
+    }
+  }
+}

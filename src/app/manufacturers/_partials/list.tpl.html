@@ -1,0 +1,9 @@
+<ion-view view-title="Brands">
+    <ion-content>
+        <ion-list>
+            <ion-item ui-sref="app.manufacturers.detail({id: manufacturer.id})" auto-list-divider auto-list-divider-value="{{manufacturer.name}}" ng-repeat="manufacturer in vm.manufacturers">
+                {{manufacturer.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

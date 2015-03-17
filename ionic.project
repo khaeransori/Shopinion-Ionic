@@ -1,0 +1,17 @@
+{
+  "name": "Shopinion",
+  "app_id": "com.gatotkacalabs.shopinion",
+  "gulpStartupTasks": [
+    "sass",
+    "core",
+    "js",
+    "vendor",
+    "templates",
+    "fonts"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "vendor/**/*",
+    "src/**/*"
+  ]
+}

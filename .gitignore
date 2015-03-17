@@ -1,0 +1,10 @@
+node_modules/
+platforms/
+plugins/
+vendor/
+www/maps/
+www/js/
+www/css/
+.idea/
+.DS_Store
+.idea/workspace.xml

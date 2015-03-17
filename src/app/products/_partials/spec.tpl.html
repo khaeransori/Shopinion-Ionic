@@ -1,0 +1,39 @@
+<ion-view title="{{vm.product.name}}">
+	<div class="tabs-striped tabs-top tabs-energized">
+		<div class="tabs">
+			<a class="tab-item active" ui-sref="app.products.spec({id: vm.product.id})">
+				Detail
+			</a>
+			<a class="tab-item" href="#">
+				Review
+			</a>
+		</div>
+	</div>
+	<ion-content class="has-tabs-top">
+		<div class="row">
+			<div class="col">
+				<h4>Deskripsi Produk</h4>
+				<p>
+					{{vm.product.name}}
+					<br />
+					<span class="assertive" data-ng-if="vm.product.sale_price !== '0.000000'">
+						{{vm.product.sale_price | currency:"Rp. "}}
+					</span>
+					<span data-ng-class="{'text-strike': vm.product.sale_price !== '0.000000', 'bold': vm.product.sale_price === '0.000000'}">
+						{{vm.product.price | currency:"Rp. "}}
+					</span>
+				</p>
+				<p class="text-justify">
+					{{vm.product.description}}
+				</p>
+				<p class="text-justify">
+					<ul>
+						<li data-ng-repeat="feature in vm.product.features">
+							- {{feature.feature.name}}: {{feature.value}}
+						</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

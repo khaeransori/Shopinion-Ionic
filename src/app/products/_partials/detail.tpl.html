@@ -1,0 +1,56 @@
+<ion-view title="{{vm.product.name}}">
+  <ion-content>
+    <div class="row">
+      <div class="col">
+        <p class="text-center">
+          {{vm.product.name}} <br />
+          <span class="assertive" data-ng-if="vm.product.sale_price !== '0.000000'">
+            {{vm.product.sale_price | currency:"Rp. "}}
+          </span>
+          <span data-ng-class="{'text-strike': vm.product.sale_price !== '0.000000', 'bold': vm.product.sale_price === '0.000000'}">
+            {{vm.product.price | currency:"Rp. "}}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <ion-slide-box data-ng-if="vm.product.images.length > 0">
+          <ion-slide data-ng-repeat="image in vm.product.images">
+            <div class="box">
+              <img data-ng-src="{{image.large_source}}" class="full-width-img" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+
+        <ion-slide-box data-ng-if="vm.product.images.length === 0">
+          <ion-slide>
+            <div class="box">
+              <img src="http://placehold.it/450x600" class="full-width-img" />
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+
+      </div>
+    </div>
+
+  </ion-content>
+    <div class="row" style="position: absolute; bottom: 0px; width: 100%">
+      <div class="col col-25">
+        <button class="button button-block button-icon icon ion-heart">
+        </button>
+      </div>
+
+      <div class="col col-50">
+        <a ui-sref="app.products.spec({id: vm.product.id})" class="button button-block button-energized">
+          Detail
+        </a>
+      </div>
+
+      <div class="col col-25">
+        <button class="button button-block button-icon icon ion-bag">
+        </button>
+      </div>
+    </div>
+</ion-view>

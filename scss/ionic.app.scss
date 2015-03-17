@@ -1,0 +1,79 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path:      "../assets/fonts" !default;
+$fa-font-path:            $ionicons-font-path;
+
+// Include all of Ionic
+@import "vendor/ionic/scss/ionic";
+@import "vendor/fontawesome/scss/font-awesome";
+
+/* Empty. Add your own CSS if you like */
+.bubble {
+  background: #fff;  		
+  position: absolute;
+  right: 5px;
+  top: -5px;
+  padding: 2px 6px;
+  color: #444;
+  font: bold .7em Ionicons;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  border: 1px;
+  border-color: #444;
+  border-style: solid;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.full-width-img {
+  width: 100% !important;
+}
+
+.item-caroussel {
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-strike {
+  text-decoration: line-through;
+}
+
+.link-plain {
+  color: inherit;
+  text-decoration: none;
+}

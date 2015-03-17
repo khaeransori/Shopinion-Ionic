@@ -1,0 +1,44 @@
+<!-- <ion-content class="has-tabs">
+  <div class="row">
+    <div class="col col-50">
+      <div class="item item-image">
+        <img ng-src="{{image}}">
+      </div>
+    </div>
+
+    <div class="col col-50">
+      <p>
+        {{brand}}
+        <br />
+        {{name}}
+        <br />
+        <span ng-if="discPrice>0">
+          <b class="assertive">{{discPrice | currency:"RP "}}</b>
+          <br />
+          <span class="text-strike">{{price | currency:"RP "}}</span>
+        </span>
+
+        <b ng-if="discPrice==0">{{price | currency:"RP "}}</b>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <a ui-sref="app.reviewWrite({productId: id})" class="button button-block button-energized">Tambah Review</a>
+    </div>
+  </div>
+
+  <div class="list" ng-controller="reviewListCtrl">
+    <a class="item" ui-sref="app.reviewDetail({reviewId: list.id})" ng-repeat="list in lists">
+      <h2>{{list.subject}}</h2>
+      <small>oleh {{list.by}}</small>
+      <span class="item-note">
+        {{list.at}}
+      </span>
+      <p>
+        {{list.content}}
+      </p>
+    </a>
+  </div>
+</ion-content> -->
