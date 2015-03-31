@@ -1,0 +1,60 @@
+<ion-view title="Mendaftar">
+  <div class="tabs-striped tabs-top tabs-energized">
+    <div class="tabs">
+      <a class="tab-item" ui-sref="app.account.login">
+        Login
+      </a>
+      <a class="tab-item active" href="app.account.register">
+        Mendaftar
+      </a>
+    </div>
+  </div>
+
+  <ion-content class="has-tabs-top">
+  <div class="row">
+    <div class="col">
+      <b>Pelanggan baru</b>
+      <p>
+        Buat akun baru sekarang untuk berbelanja lebih cepat dan mudah
+      </p>
+    </div>
+  </div>
+  <form name="registerForm" data-ng-submit="vm.submitRegister(registerForm.$valid)">
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nama Depan</span>
+        <input type="text" placeholder="Nama Depan*" tabindex="1" data-ng-model="vm.register.first_name" required>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nama Belakang</span>
+        <input type="text" placeholder="Nama Belakang*" tabindex="2" data-ng-model="vm.register.last_name" required>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Ulang tahun</span>
+        <input type="date" placeholder="Ulang tahun" tabindex="3" data-ng-model="vm.register.dob" required>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nomor Telepon</span>
+        <input type="tel" placeholder="Nomor Telepon*" tabindex="4" data-ng-model="vm.register.phone" required>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">E-mail</span>
+        <input type="email" placeholder="Masukkan alamat e-mail Anda*" tabindex="5" data-ng-model="vm.register.email" required>
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="password" placeholder="Password*" tabindex="6" data-ng-model="vm.register.password" required>
+      </label>
+      <li class="item item-checkbox">
+        <label class="checkbox checkbox-energized">
+          <input type="checkbox" name="agreement" id="agreement" tabindex="7" data-ng-model="vm.register.agreement" required>
+        </label>
+        <small>Saya menyetujui kebijakan privasi</small>
+      </li>
+    </div>
+    <div class="padding">
+      <input type="submit" class="button button-block button-energized" value="Buat Akun" data-ng-disabled="registerForm.$invalid">
+    </div>
+  </form>
+  </ion-content>
+</ion-view>

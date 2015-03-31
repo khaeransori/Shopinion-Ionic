@@ -1,0 +1,9 @@
+<ion-list>
+	<ion-item class="bold">
+		Shop All {{_selectedCategory.name}}
+	</ion-item>
+	
+	<ion-item ng-repeat="category in _selectedCategory.children" data-ng-click="vm.selectCategory(category.id)">
+		{{category.name}}
+	</ion-item>
+</ion-list>

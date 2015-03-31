@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.manufacturers')
+        .module('app.categories')
         .run(appRun);
 
     /* @ngInject */
@@ -14,9 +14,9 @@
     function getRoutes() {
         return [
             {
-                state: 'app.manufacturers',
+                state: 'app.categories',
                 config: {
-                    url: '/manufacturers',
+                    url: '/categories',
                     abstract: true,
                     views: {
                         'content': {
@@ -26,19 +26,11 @@
                 }
             },
             {
-                state: 'app.manufacturers.list',
-                config: {
-                    url: '/list',
-                    templateUrl: 'app/manufacturers/_partials/list.tpl.html',
-                    controller: 'ManufacturersController as vm'
-                }
-            },
-            {
-                state: 'app.manufacturers.detail',
+                state: 'app.categories.list',
                 config: {
                     url: '/:id',
                     templateUrl: 'app/products/_partials/list.tpl.html',
-                    controller: 'ManufacturerProductsController as vm'
+                    controller: 'CategoryProductsController as vm'
                 }
             }
         ];
@@ -47,8 +39,8 @@
     function getResources() {
         return [
             {
-                resource: 'manufacturers',
-                url: 'api/mobile/manufacturers',
+                resource: 'categories',
+                url: 'api/mobile/categories',
                 unnatural: false
             }
         ];

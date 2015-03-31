@@ -120,6 +120,7 @@
 				create: create,
 				get: get,
 				list: list,
+				post: post,
 				remove: remove,
 				update: update
 			};
@@ -139,6 +140,10 @@
 				return api[resource].query(query).$promise;
 			}
 
+			function post (resource, model) {
+				return api[resource].save(model).$promise;
+			}
+			
 			function remove (resource, model) {
 				return api[resource].remove(model).$promise;
 			}

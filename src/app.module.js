@@ -21,6 +21,8 @@
          */
         'app.core',
 
+        'app.account',
+        'app.categories',
         'app.front',
         'app.manufacturers',
         'app.products'

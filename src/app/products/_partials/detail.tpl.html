@@ -1,4 +1,4 @@
-<ion-view title="{{vm.product.name}}">
+<ion-view title="{{vm.title}}">
   <ion-content>
     <div class="row">
       <div class="col">
@@ -36,21 +36,21 @@
     </div>
 
   </ion-content>
-    <div class="row" style="position: absolute; bottom: 0px; width: 100%">
-      <div class="col col-25">
-        <button class="button button-block button-icon icon ion-heart">
-        </button>
-      </div>
-
-      <div class="col col-50">
-        <a ui-sref="app.products.spec({id: vm.product.id})" class="button button-block button-energized">
-          Detail
-        </a>
-      </div>
-
-      <div class="col col-25">
-        <button class="button button-block button-icon icon ion-bag">
-        </button>
-      </div>
+  <div class="row" style="position: absolute; bottom: 0px; width: 100%; z-index:1000">
+    <div class="col col-25">
+      <button class="button button-block button-icon icon ion-heart">
+      </button>
     </div>
+
+    <div class="col col-50">
+      <a ui-sref="app.products.spec({id: vm.product.id})" class="button button-block button-energized">
+        Detail
+      </a>
+    </div>
+
+    <div class="col col-25">
+      <button class="button button-block button-icon icon ion-bag">
+      </button>
+    </div>
+  </div>
 </ion-view>

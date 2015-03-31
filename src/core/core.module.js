@@ -7,7 +7,7 @@
 	* Description
 	*/
 	angular.module('app.core', [
-		'ionic', 'ionic.ion.autoListDivider',
+		'ionic',
 		/*
          * Angular modules
          */

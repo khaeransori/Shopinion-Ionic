@@ -5,8 +5,8 @@
         .module('app')
         .run(appRun);
 
-	appRun.$inject = ['$ionicPlatform'];
-    function appRun($ionicPlatform) {
+    /* @ngInject */
+    function appRun($ionicPlatform, $localStorage, $rootScope, data) {
         $ionicPlatform.ready(function() {
 			// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 			// for form inputs)
@@ -17,6 +17,9 @@
 				// org.apache.cordova.statusbar required
 				StatusBar.styleDefault();
 			}
+
+			// assign storage
+			$rootScope.$storage = $localStorage;
 		});
     }
 })();

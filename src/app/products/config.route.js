@@ -64,7 +64,7 @@
         return [
             {
                 resource: 'products',
-                url: 'mobile/products',
+                url: 'api/mobile/products',
                 unnatural: false
             }
         ];

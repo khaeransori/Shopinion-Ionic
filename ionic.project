@@ -10,8 +10,6 @@
     "fonts"
   ],
   "watchPatterns": [
-    "www/**/*",
-    "vendor/**/*",
-    "src/**/*"
+    "www/**/*"
   ]
 }

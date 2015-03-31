@@ -24,8 +24,8 @@
         };
     }
 
-    routehelper.$inject = ['$location', '$rootScope', '$state', 'config', 'logger', 'routehelperConfig'];
-    function routehelper($location, $rootScope, $state, config, logger, routehelperConfig) {
+    /* @ngInject */
+    function routehelper($localStorage, $location, $rootScope, $state, config, logger, routehelperConfig) {
         var handlingRouteChangeError = false;
         var routeCounts = {
             errors: 0,
@@ -78,6 +78,7 @@
         function init() {
             handleRoutingErrors();
             updateDocTitle();
+            isAuthenticated();
         }
 
         function getRoutes() {
@@ -102,6 +103,26 @@
                     $rootScope.title = title; // data bind to <title>
                     $rootScope.pageTitle = current.title;
                     $rootScope.pageSubTitle = current.subTitle;
+                }
+            );
+        }
+
+        function isAuthenticated () {
+            $rootScope.$on('$stateChangeStart',
+                function (event, toState, toParams, fromState, fromParams) {
+                    if (toState.authenticated) {
+                        if ($localStorage.token === undefined) {
+                            event.preventDefault();
+                            $state.go('app.account.login');
+                        };
+                    };
+                }
+            );
+
+            $rootScope.$on('unauthorized',
+                function () {
+                    $localStorage.$reset();
+                    $state.go('app.account.account');
                 }
             );
         }

@@ -10,6 +10,7 @@
         /* jshint validthis:true */
         var vm = this;
         vm.product = {};
+        vm.title = undefined;
 
         activate();
 
@@ -17,6 +18,11 @@
         function activate () {
             var promises = [getProduct()];
             return api.ready(promises).then(function (){
+                vm.title = vm.product.name;
+
+                if (vm.product.manufacturer_id !== null) {
+                    vm.title = vm.product.manufacturer.name;
+                };
                 logger.info('Activated Products View');
             });
         }

@@ -10,7 +10,7 @@
 	/* @ngInject */
 	function appRun ($rootScope, $ionicLoading) {
 		$rootScope.$on('loading:show', function() {
-			$ionicLoading.show({template: 'Loading...'});
+			$ionicLoading.show({template: '<ion-spinner></ion-spinner>'});
 		});
 
 		$rootScope.$on('loading:hide', function() {
@@ -24,7 +24,7 @@
 	}
 
 	/* @ngInject */
-	function resourceInterceptor ($rootScope, $q) {
+	function resourceInterceptor ($localStorage, $rootScope, $q) {
         var numLoadings = 0;
         var service = {
             request: request,
@@ -38,6 +38,9 @@
         function request (config) {
             numLoadings++;
 
+            if ($localStorage.token !== undefined) {
+                config.headers['Authorization'] = "Bearer " + $localStorage.token;
+            }
             // Show loader
             $rootScope.$broadcast('loading:show');
             return config || $q.when(config);
@@ -56,6 +59,10 @@
             if (!(--numLoadings)) {
                 // Hide loader
                 $rootScope.$broadcast('loading:hide');
+
+                if (responses.status === 401) {
+                    $rootScope.$broadcast('unauthorized');
+                }
             }
 
             return $q.reject(responses);

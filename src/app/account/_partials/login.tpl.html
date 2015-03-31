@@ -1,0 +1,43 @@
+<ion-view title="Login">
+	<div class="tabs-striped tabs-top tabs-energized">
+		<div class="tabs">
+			<a class="tab-item active" ui-sref="app.account.login">
+				Login
+			</a>
+			<a class="tab-item" ui-sref="app.account.register">
+				Mendaftar
+			</a>
+		</div>
+	</div>
+	
+	<ion-content class="has-tabs-top">
+		<div class="row">
+			<div class="col">
+				<b>Pelanggan tetap</b>
+				<p>
+					Sign in ke akun Anda untuk checkout dan melacak dimana order Anda atau menulis ulasan.
+				</p>
+			</div>
+		</div>
+		<form name="loginForm" data-ng-submit="vm.submitLogin(loginForm.$valid)">
+			<div class="list">
+				<label class="item item-input item-floating-label">
+					<span class="input-label">E-mail*</span>
+					<input type="email" placeholder="E-mail" tabindex="1" data-ng-model="vm.login.email" required>
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Password</span>
+					<input type="password" placeholder="Password" tabindex="2" data-ng-model="vm.login.password" required>
+				</label>
+			</div>
+			<div class="row">
+				<div class="col text-right">
+					<a ui-sref="app.account.forgot" class="link-plain energized">Lupa Password?</a>
+				</div>
+			</div>
+			<div class="padding">
+				<input type="submit" class="button button-block button-energized" value="Login" data-ng-disabled="loginForm.$invalid">
+			</div>
+		</form>
+	</ion-content>
+</ion-view>
